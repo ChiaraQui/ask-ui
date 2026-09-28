@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Markdown from 'react-markdown'
 import { AskNexusInput } from '@/components/ui/ask-nexus-input'
-import { AskError, BASE_URL, ask } from './api'
+import { AskError, ask } from './api'
 import { MODELS, type AskResponse, type Model } from './types'
 
 const SLOW_AFTER_MS = 6000
@@ -76,7 +76,7 @@ export default function App() {
               ))}
             </select>
           </label>
-          <code className="font-mono">{BASE_URL}</code>
+          <span className="font-mono">structured output · cost per call</span>
         </footer>
       </div>
     </div>
