@@ -6,6 +6,8 @@ at the point of use rather than discovered on a monthly invoice.
 
 Built during week 1 of an AI engineering bootcamp, September 2026.
 
+![The UI: a question, a structured answer, and its token count and cost](docs/screenshot.png)
+
 ## What it does
 
 You ask a question. The API returns structured JSON — not a wall of text — and
@@ -127,6 +129,12 @@ Known, not hidden:
 
 - **No authentication.** Deliberate for a portfolio project, and the reason the
   endpoint is not published. It would be the first thing to add for real use.
+- **`confidence` is self-assessed, not a correctness signal.** Asked "what is
+  RAG?", the service returned a fluent, well-formed answer about Red-Amber-Green
+  project status at 95% confidence. The schema guarantees the *shape* of a
+  response, never that it answered the question you meant. Disambiguation belongs
+  in the prompt, not the type system — and a caller branching on
+  `confidence > 0.9` would sail straight past this.
 - **No conversation history.** Each question is independent; there is no thread.
 - **No retry on the client.** A cold-start timeout requires asking again.
 - **Three hardcoded models.** The list mirrors the API's price table rather than
