@@ -61,7 +61,7 @@ export default function App() {
           {result && <Result result={result} />}
         </div>
 
-        <footer className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 py-4 text-xs text-slate-500 dark:border-slate-800">
+        <footer className="mt-auto flex items-center gap-3 border-t border-slate-200 py-4 text-xs text-slate-500 dark:border-slate-800">
           <label className="flex items-center gap-2">
             <span>Model</span>
             <select
@@ -76,7 +76,6 @@ export default function App() {
               ))}
             </select>
           </label>
-          <span className="font-mono">structured output · cost per call</span>
         </footer>
       </div>
     </div>
